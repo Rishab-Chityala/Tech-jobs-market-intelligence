@@ -1,6 +1,9 @@
 import json
 
 from src.models.job import Job
+import json
+
+from src.models.job import Job
 from src.api.clients import fetch_jobs
 from src.etl.transform import transform_jobs
 from src.validation.validator import validate_jobs
