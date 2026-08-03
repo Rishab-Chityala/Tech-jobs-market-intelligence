@@ -1,0 +1,318 @@
+{
+    "count": 26826,
+    "__CLASS__": "Adzuna::API::Response::JobSearchResults",
+    "mean": 1546402.73,
+    "results": [
+        {
+            "company": {
+                "display_name": "ABB",
+                "__CLASS__": "Adzuna::API::Response::Company"
+            },
+            "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTgwNjI3Njk0OSIsInMiOiJTRDBEaDBxUDhSR28wcjBSUi1vVG9BIn0.8SUFr4olYJevq5MOMHOzRajh0k6NVFbmFdOZ8MPtUyA",
+            "latitude": 12.95703,
+            "contract_time": "full_time",
+            "longitude": 77.59837,
+            "__CLASS__": "Adzuna::API::Response::Job",
+            "title": "Software Engineer",
+            "category": {
+                "tag": "engineering-jobs",
+                "label": "Engineering Jobs",
+                "__CLASS__": "Adzuna::API::Response::Category"
+            },
+            "salary_is_predicted": "0",
+            "redirect_url": "https://www.adzuna.in/land/ad/5806276949?se=SD0Dh0qP8RGo0r0RR-oToA&utm_medium=api&utm_source=2ef0ce42&v=B659B59E277C115DC1486C45335FF0AFFC57D4FA",
+            "location": {
+                "area": [
+                    "India",
+                    "Karnataka",
+                    "Bangalore"
+                ],
+                "display_name": "Bangalore, Karnataka",
+                "__CLASS__": "Adzuna::API::Response::Location"
+            },
+            "created": "2026-07-18T22:18:08Z",
+            "description": "This job is with ABB, an inclusive employer and a member of myGwork – the largest global platform for the LGBTQ business community. Please do not contact the recruiter directly. At ABB, we help industries run leaner and cleaner—and every person here makes that happen. You’ll be empowered to lead, supported to grow, and proud of the impact we create together. Join us and help run what runs the world. This Position reports to: Principal Software Engineer What We Believe In ABB's Process Automatio…",
+            "id": "5806276949"
+        },
+        {
+            "company": {
+                "__CLASS__": "Adzuna::API::Response::Company",
+                "display_name": "ABB"
+            },
+            "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiU0QwRGgwcVA4UkdvMHIwUlItb1RvQSIsImkiOiI1Nzg1NzcyMDcyIn0.MFhRJe9atzr79nb2iUZ3377d5cpt5QtTBDy7VzeeLz8",
+            "contract_time": "full_time",
+            "latitude": 12.95703,
+            "longitude": 77.59837,
+            "__CLASS__": "Adzuna::API::Response::Job",
+            "title": "Software Engineer",
+            "category": {
+                "__CLASS__": "Adzuna::API::Response::Category",
+                "label": "IT Jobs",
+                "tag": "it-jobs"
+            },
+            "location": {
+                "__CLASS__": "Adzuna::API::Response::Location",
+                "display_name": "Bangalore, Karnataka",
+                "area": [
+                    "India",
+                    "Karnataka",
+                    "Bangalore"
+                ]
+            },
+            "salary_is_predicted": "0",
+            "redirect_url": "https://www.adzuna.in/land/ad/5785772072?se=SD0Dh0qP8RGo0r0RR-oToA&utm_medium=api&utm_source=2ef0ce42&v=347C6515162441045A20EF2C51B5BD0A275ED41D",
+            "created": "2026-07-03T00:54:22Z",
+            "description": "This job is with ABB, an inclusive employer and a member of myGwork – the largest global platform for the LGBTQ business community. Please do not contact the recruiter directly. At ABB, we help industries run leaner and cleaner—and every person here makes that happen. You’ll be empowered to lead, supported to grow, and proud of the impact we create together. Join us and help run what runs the world. This Position reports to: Principal Software Engineer What We Believe In ABB's Process Automatio…",
+            "id": "5785772072"
+        },
+        {
+            "id": "5821999885",
+            "description": "This job is with ABB, an inclusive employer and a member of myGwork – the largest global platform for the LGBTQ business community. Please do not contact the recruiter directly. At ABB, we help industries run leaner and cleaner—and every person here makes that happen. You’ll be empowered to lead, supported to grow, and proud of the impact we create together. Join us and help run what runs the world. This Position reports to: Digital Solution Engineering Manager What we believe in ABB’s Process …",
+            "salary_is_predicted": "0",
+            "location": {
+                "__CLASS__": "Adzuna::API::Response::Location",
+                "display_name": "Bangalore, Karnataka",
+                "area": [
+                    "India",
+                    "Karnataka",
+                    "Bangalore"
+                ]
+            },
+            "redirect_url": "https://www.adzuna.in/land/ad/5821999885?se=SD0Dh0qP8RGo0r0RR-oToA&utm_medium=api&utm_source=2ef0ce42&v=8543E341535E343BB4BD5F7C82BB2C6E7F4C738D",
+            "category": {
+                "__CLASS__": "Adzuna::API::Response::Category",
+                "tag": "engineering-jobs",
+                "label": "Engineering Jobs"
+            },
+            "created": "2026-07-31T09:50:04Z",
+            "title": "Software Engineer",
+            "longitude": 77.59837,
+            "__CLASS__": "Adzuna::API::Response::Job",
+            "latitude": 12.95703,
+            "contract_time": "full_time",
+            "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTgyMTk5OTg4NSIsInMiOiJTRDBEaDBxUDhSR28wcjBSUi1vVG9BIn0.RC1Hc9ZYTWFIzwth299A1P9DFzVD8yEE12zi5FOG2PA",
+            "company": {
+                "__CLASS__": "Adzuna::API::Response::Company",
+                "display_name": "ABB"
+            }
+        },
+        {
+            "created": "2026-07-15T23:39:40Z",
+            "category": {
+                "__CLASS__": "Adzuna::API::Response::Category",
+                "tag": "engineering-jobs",
+                "label": "Engineering Jobs"
+            },
+            "location": {
+                "display_name": "Bangalore, Karnataka",
+                "area": [
+                    "India",
+                    "Karnataka",
+                    "Bangalore"
+                ],
+                "__CLASS__": "Adzuna::API::Response::Location"
+            },
+            "salary_is_predicted": "0",
+            "redirect_url": "https://www.adzuna.in/land/ad/5801462812?se=SD0Dh0qP8RGo0r0RR-oToA&utm_medium=api&utm_source=2ef0ce42&v=2858B8D6D5AF1027EF954A51DE988F4FD40D119E",
+            "description": "This job is with ABB, an inclusive employer and a member of myGwork – the largest global platform for the LGBTQ business community. Please do not contact the recruiter directly. At ABB, we help industries run leaner and cleaner—and every person here makes that happen. You’ll be empowered to lead, supported to grow, and proud of the impact we create together. Join us and help run what runs the world. This Position reports to: Principal Software Engineer What We Believe In ABB’s Process Automatio…",
+            "id": "5801462812",
+            "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTgwMTQ2MjgxMiIsInMiOiJTRDBEaDBxUDhSR28wcjBSUi1vVG9BIn0.HlDl9iR6gPVJKfo-naIJpVjLbDQq4n3wjBlqW82QlHs",
+            "company": {
+                "__CLASS__": "Adzuna::API::Response::Company",
+                "display_name": "ABB"
+            },
+            "latitude": 12.95703,
+            "contract_time": "full_time",
+            "longitude": 77.59837,
+            "__CLASS__": "Adzuna::API::Response::Job",
+            "title": "Senior Software Engineer"
+        },
+        {
+            "contract_time": "full_time",
+            "latitude": 12.95703,
+            "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiU0QwRGgwcVA4UkdvMHIwUlItb1RvQSIsImkiOiI1ODAwOTMxNjczIn0.a7Ikejl3c_g-qZLw1kftLuMsbUxeRuGYj6PTJwMOVXA",
+            "company": {
+                "display_name": "ABB",
+                "__CLASS__": "Adzuna::API::Response::Company"
+            },
+            "title": "Senior Software Engineer",
+            "__CLASS__": "Adzuna::API::Response::Job",
+            "longitude": 77.59837,
+            "salary_is_predicted": "0",
+            "redirect_url": "https://www.adzuna.in/land/ad/5800931673?se=SD0Dh0qP8RGo0r0RR-oToA&utm_medium=api&utm_source=2ef0ce42&v=02C7DA1D0C532E34F60C8B33C10552AEBC5C30FC",
+            "location": {
+                "area": [
+                    "India",
+                    "Karnataka",
+                    "Bangalore"
+                ],
+                "display_name": "Bangalore, Karnataka",
+                "__CLASS__": "Adzuna::API::Response::Location"
+            },
+            "category": {
+                "label": "Engineering Jobs",
+                "tag": "engineering-jobs",
+                "__CLASS__": "Adzuna::API::Response::Category"
+            },
+            "created": "2026-07-15T14:16:30Z",
+            "id": "5800931673",
+            "description": "This job is with ABB, an inclusive employer and a member of myGwork – the largest global platform for the LGBTQ business community. Please do not contact the recruiter directly. At ABB, we help industries run leaner and cleaner—and every person here makes that happen. You’ll be empowered to lead, supported to grow, and proud of the impact we create together. Join us and help run what runs the world. This Position reports to: Principal Software Engineer What We Believe In ABB's Process Automatio…"
+        },
+        {
+            "latitude": 12.95703,
+            "contract_time": "full_time",
+            "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiU0QwRGgwcVA4UkdvMHIwUlItb1RvQSIsImkiOiI1ODIzNzkwNjA2In0.IRmifYKhC1nH8DsqxigdMd-wZYop-Gy0d3GuCIb5C7w",
+            "company": {
+                "__CLASS__": "Adzuna::API::Response::Company",
+                "display_name": "ABB"
+            },
+            "title": "Principal Software Engineer",
+            "__CLASS__": "Adzuna::API::Response::Job",
+            "longitude": 77.59837,
+            "created": "2026-08-01T15:51:33Z",
+            "salary_is_predicted": "0",
+            "redirect_url": "https://www.adzuna.in/land/ad/5823790606?se=SD0Dh0qP8RGo0r0RR-oToA&utm_medium=api&utm_source=2ef0ce42&v=0611E80CB310B572596223FF23A8C815E9FD69EF",
+            "location": {
+                "display_name": "Bangalore, Karnataka",
+                "area": [
+                    "India",
+                    "Karnataka",
+                    "Bangalore"
+                ],
+                "__CLASS__": "Adzuna::API::Response::Location"
+            },
+            "category": {
+                "label": "IT Jobs",
+                "tag": "it-jobs",
+                "__CLASS__": "Adzuna::API::Response::Category"
+            },
+            "id": "5823790606",
+            "description": "This job is with ABB, an inclusive employer and a member of myGwork – the largest global platform for the LGBTQ business community. Please do not contact the recruiter directly. At ABB, we help industries run leaner and cleaner—and every person here makes that happen. You’ll be empowered to lead, supported to grow, and proud of the impact we create together. Join us and help run what runs the world. This Position reports to: Digital Solution Engineering Manager What we believe in ABB's Process …"
+        },
+        {
+            "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTgxMjUyODM2MCIsInMiOiJTRDBEaDBxUDhSR28wcjBSUi1vVG9BIn0.7qgOWN5q9JmmE-f3lrLVhxdzaCCW52BGiyyEHzDMtWw",
+            "company": {
+                "display_name": "Accenture",
+                "__CLASS__": "Adzuna::API::Response::Company"
+            },
+            "contract_time": "full_time",
+            "latitude": 20.2697,
+            "longitude": 85.85055,
+            "__CLASS__": "Adzuna::API::Response::Job",
+            "title": "Custom Software Engineer",
+            "created": "2026-07-23T22:17:08Z",
+            "category": {
+                "__CLASS__": "Adzuna::API::Response::Category",
+                "tag": "it-jobs",
+                "label": "IT Jobs"
+            },
+            "salary_is_predicted": "0",
+            "redirect_url": "https://www.adzuna.in/land/ad/5812528360?se=SD0Dh0qP8RGo0r0RR-oToA&utm_medium=api&utm_source=2ef0ce42&v=A5CADD959BC62A1D20DC7340D6340E1CC402A81C",
+            "location": {
+                "area": [
+                    "India",
+                    "Orissa",
+                    "Khordha",
+                    "Bhubaneswar"
+                ],
+                "display_name": "Bhubaneswar, Khordha",
+                "__CLASS__": "Adzuna::API::Response::Location"
+            },
+            "description": "This job is with Accenture, an inclusive employer and a member of myGwork – the largest global platform for the LGBTQ business community. Please do not contact the recruiter directly. Project Role : Custom Software Engineer Project Role Description : Develop custom software solutions to design, code, and enhance components across systems or applications. Use modern frameworks and agile practices to deliver scalable, high-performing solutions tailored to specific business needs. Must have skills…",
+            "id": "5812528360"
+        },
+        {
+            "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTgyMTk5OTkyOCIsInMiOiJTRDBEaDBxUDhSR28wcjBSUi1vVG9BIn0.OS3hlQhejHDrQxYNBm4RSdfiisTk3nnvQ_337FgJ6EM",
+            "company": {
+                "__CLASS__": "Adzuna::API::Response::Company",
+                "display_name": "ABB"
+            },
+            "latitude": 12.95703,
+            "contract_time": "full_time",
+            "longitude": 77.59837,
+            "__CLASS__": "Adzuna::API::Response::Job",
+            "title": "Senior Software Engineer",
+            "category": {
+                "tag": "engineering-jobs",
+                "label": "Engineering Jobs",
+                "__CLASS__": "Adzuna::API::Response::Category"
+            },
+            "salary_is_predicted": "0",
+            "location": {
+                "display_name": "Bangalore, Karnataka",
+                "area": [
+                    "India",
+                    "Karnataka",
+                    "Bangalore"
+                ],
+                "__CLASS__": "Adzuna::API::Response::Location"
+            },
+            "redirect_url": "https://www.adzuna.in/land/ad/5821999928?se=SD0Dh0qP8RGo0r0RR-oToA&utm_medium=api&utm_source=2ef0ce42&v=4AD694ADD97284B0E0525320979DF8C1F0DD6641",
+            "created": "2026-07-31T09:50:08Z",
+            "description": "This job is with ABB, an inclusive employer and a member of myGwork – the largest global platform for the LGBTQ business community. Please do not contact the recruiter directly. At ABB, we help industries run leaner and cleaner—and every person here makes that happen. You’ll be empowered to lead, supported to grow, and proud of the impact we create together. Join us and help run what runs the world. This Position reports to: Digital Solution Engineering Manager What we believe in ABB's Process …",
+            "id": "5821999928"
+        },
+        {
+            "title": "Senior Software Engineer",
+            "__CLASS__": "Adzuna::API::Response::Job",
+            "longitude": 77.59837,
+            "contract_time": "full_time",
+            "latitude": 12.95703,
+            "company": {
+                "__CLASS__": "Adzuna::API::Response::Company",
+                "display_name": "ABB"
+            },
+            "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiU0QwRGgwcVA4UkdvMHIwUlItb1RvQSIsImkiOiI1Nzg1NzcwNzI2In0.sXdBBfJR-KoBu-95UZejtfWlR-Z4ecfzZrUHClyYK_I",
+            "id": "5785770726",
+            "description": "This job is with ABB, an inclusive employer and a member of myGwork – the largest global platform for the LGBTQ business community. Please do not contact the recruiter directly. At ABB, we help industries run leaner and cleaner—and every person here makes that happen. You’ll be empowered to lead, supported to grow, and proud of the impact we create together. Join us and help run what runs the world. This Position reports to: Principal Software Engineer What We Believe In ABB's Process Automatio…",
+            "location": {
+                "__CLASS__": "Adzuna::API::Response::Location",
+                "display_name": "Bangalore, Karnataka",
+                "area": [
+                    "India",
+                    "Karnataka",
+                    "Bangalore"
+                ]
+            },
+            "salary_is_predicted": "0",
+            "redirect_url": "https://www.adzuna.in/land/ad/5785770726?se=SD0Dh0qP8RGo0r0RR-oToA&utm_medium=api&utm_source=2ef0ce42&v=3C423CEA95E06187AFD43F11A935DA0ED8F80586",
+            "category": {
+                "__CLASS__": "Adzuna::API::Response::Category",
+                "tag": "engineering-jobs",
+                "label": "Engineering Jobs"
+            },
+            "created": "2026-07-03T00:54:11Z"
+        },
+        {
+            "description": "This job is with ABB, an inclusive employer and a member of myGwork – the largest global platform for the LGBTQ business community. Please do not contact the recruiter directly. At ABB, we help industries run leaner and cleaner—and every person here makes that happen. You’ll be empowered to lead, supported to grow, and proud of the impact we create together. Join us and help run what runs the world. This Position reports to: Digital Solution Engineering Manager What We Believe In ABB's Process …",
+            "id": "5796513579",
+            "category": {
+                "__CLASS__": "Adzuna::API::Response::Category",
+                "tag": "it-jobs",
+                "label": "IT Jobs"
+            },
+            "salary_is_predicted": "0",
+            "redirect_url": "https://www.adzuna.in/land/ad/5796513579?se=SD0Dh0qP8RGo0r0RR-oToA&utm_medium=api&utm_source=2ef0ce42&v=C82F0CFFE543337C84CD65177B672D4444466886",
+            "location": {
+                "display_name": "Bangalore, Karnataka",
+                "area": [
+                    "India",
+                    "Karnataka",
+                    "Bangalore"
+                ],
+                "__CLASS__": "Adzuna::API::Response::Location"
+            },
+            "created": "2026-07-11T10:06:10Z",
+            "longitude": 77.59837,
+            "__CLASS__": "Adzuna::API::Response::Job",
+            "title": "Principal Software Engineer",
+            "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTc5NjUxMzU3OSIsInMiOiJTRDBEaDBxUDhSR28wcjBSUi1vVG9BIn0.PEpcZyJLvAp3XB58ACu3eolJEgkoae3TtJfAnXfet_0",
+            "company": {
+                "__CLASS__": "Adzuna::API::Response::Company",
+                "display_name": "ABB"
+            },
+            "latitude": 12.95703,
+            "contract_time": "full_time"
+        }
+    ]
+}
