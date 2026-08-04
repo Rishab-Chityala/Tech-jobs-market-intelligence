@@ -16,6 +16,7 @@ def jobs_to_dataframe(jobs):
         row["ingested_at"] = datetime.now(timezone.utc)
         
         rows.append(row)
+    
         
     return pd.DataFrame(rows)
   

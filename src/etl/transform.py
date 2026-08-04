@@ -12,7 +12,7 @@ def transform_job(raw_job: dict) -> Job:
 
     return Job(
 
-        job_id=raw_job.get("id"),
+        job_id=str(raw_job.get("id")) if raw_job.get("id") is not None else None,
         title=raw_job.get("title"),
         company=raw_job.get("company", {}).get("display_name"),
         country=country,

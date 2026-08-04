@@ -23,6 +23,26 @@ def merge_jobs():
 ) S
 
     ON T.job_id = S.job_id
+    
+    WHEN MATCHED THEN
+    UPDATE SET
+    title = S.title,
+    company = S.company,
+    country = S.country,
+    state = S.state,
+    city = S.city,
+    location = S.location,
+    category = S.category,
+    latitude = S.latitude,
+    longitude = S.longitude,
+    contract_type = S.contract_type,
+    description = S.description,
+    posted_date = S.posted_date,
+    job_url = S.job_url,
+    salary_min = S.salary_min,
+    salary_max = S.salary_max,
+    salary_predicted = S.salary_predicted,
+    ingested_at = S.ingested_at
 
     WHEN NOT MATCHED THEN
     INSERT (
@@ -73,3 +93,12 @@ def merge_jobs():
     job.result()
 
     print("Merge completed.")
+
+def clear_staging():
+    query = f"""
+    TRUNCATE TABLE `{client.project}.{DATASET_ID}.{STAGING_TABLE}`
+    """
+
+    client.query(query).result()
+
+    print("Staging table cleared.")
