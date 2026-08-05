@@ -44,3 +44,4 @@ test_loader.py
 test_schema.py
 test_bigquery.py
 test_merge.py
+test_analytics.py

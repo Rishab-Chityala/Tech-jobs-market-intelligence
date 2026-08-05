@@ -92,7 +92,7 @@ def merge_jobs():
 
     job.result()
 
-    print("Merge completed.")
+    print("\nMerge completed.")
 
 def clear_staging():
     query = f"""

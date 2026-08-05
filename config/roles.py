@@ -1,6 +1,15 @@
-TECH_ROLES = [
+ROLES = [
     "Software Engineer",
+    "Data Engineer",
     "Data Scientist",
-    "Data Engineer"
-    "Data Analyst",
+    "Machine Learning Engineer",
+    "AI Engineer",
+    "Python Developer",
+    "Backend Developer",
+    "Frontend Developer",
+    "Full Stack Developer",
+    "DevOps Engineer",
+    "Cloud Engineer",
+    "Business Analyst",
+    "Data Analyst"
 ]
