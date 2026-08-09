@@ -1,0 +1,40 @@
+name: Daily Job Market Pipeline
+
+on:
+  schedule:
+    - cron: "30 3 * * *"   # 3:30 AM UTC = 9:00 AM IST
+  workflow_dispatch:        # allows manual "Run workflow" trigger from GitHub UI
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Write GCP service account key to file
+        run: |
+          cat << 'EOF' > gcp-key.json
+          ${{ secrets.GCP_SA_KEY }}
+          EOF
+
+      - name: Run pipeline
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ github.workspace }}/gcp-key.json
+          ADZUNA_APP_ID: ${{ secrets.ADZUNA_APP_ID }}
+          ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
+          COUNTRY: ${{ secrets.COUNTRY }}
+        run: python main.py
+
+      - name: Clean up credentials file
+        if: always()
+        run: rm -f gcp-key.json
