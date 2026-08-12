@@ -25,7 +25,7 @@ def fetch_jobs(role: str, pages: int = 1, retries: int = 3):
             "app_id": APP_ID,
             "app_key": APP_KEY,
             "what": role,
-            "results_per_page": 25,
+            "results_per_page": 50,
         }
 
         success = False
