@@ -1,0 +1,7 @@
+from src.analytics.reports import hiring_trends_report,salary_analytics_report,contract_analytics_report,time_analytics_report,skill_analytics_report
+
+hiring_trends_report()
+salary_analytics_report()
+contract_analytics_report()
+time_analytics_report()
+skill_analytics_report()

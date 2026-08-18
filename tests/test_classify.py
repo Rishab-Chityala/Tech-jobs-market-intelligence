@@ -1,0 +1,5 @@
+from src.warehouse.schema import create_job_work_mode_table
+from src.work_mode.classify import run_work_mode_classification
+
+create_job_work_mode_table()
+run_work_mode_classification()
