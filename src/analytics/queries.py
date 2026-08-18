@@ -91,14 +91,30 @@ def most_common_job_titles(limit=10):
 
 
 def avg_salary_by_role(limit=10, min_count=3):
-    query = f"""
-        SELECT 
-        INITCAP(TRIM(title)) as title,
+     query = f"""
+        WITH normalized_jobs AS (
+            SELECT
+                INITCAP(TRIM(REGEXP_REPLACE(
+                    REGEXP_REPLACE(
+                        REGEXP_REPLACE(title, r'(?i)^\\s*(Sr|Senior)[\\.\\-\\s]+', 'Senior '),
+                        r'(?i)^\\s*(Jr|Junior)[\\.\\-\\s]+', 'Junior '
+                    ),
+                    r'\\s+', ' '
+                ))) AS title,
+                CASE
+                    WHEN salary_min IS NOT NULL AND salary_min >= 100000 THEN (salary_min + salary_max) / 2
+                    ELSE salary_max
+                END AS salary_estimate
+            FROM `{client.project}.{DATASET_ID}.{JOBS_TABLE}`
+            WHERE salary_max IS NOT NULL
+        )
+        SELECT
+        title,
         COUNT(*) as job_count,
-        ROUND(AVG((salary_min + salary_max) / 2), 2) as avg_salary
+        ROUND(AVG(salary_estimate), 2) as avg_salary
 
-        FROM `{client.project}.{DATASET_ID}.{JOBS_TABLE}`
-        WHERE salary_min IS NOT NULL AND salary_max IS NOT NULL AND salary_min > 0
+        FROM normalized_jobs
+        WHERE salary_estimate >= 100000
         GROUP BY title
         HAVING job_count >= {min_count}
         ORDER BY avg_salary DESC
@@ -109,13 +125,23 @@ def avg_salary_by_role(limit=10, min_count=3):
 
 def highest_paying_companies(limit=10, min_count=3):
     query = f"""
-        SELECT 
+        WITH estimates AS (
+            SELECT
+                company,
+                CASE
+                    WHEN salary_min IS NOT NULL AND salary_min >= 100000 THEN (salary_min + salary_max) / 2
+                    ELSE salary_max
+                END AS salary_estimate
+            FROM `{client.project}.{DATASET_ID}.{JOBS_TABLE}`
+            WHERE salary_max IS NOT NULL
+        )
+        SELECT
         company,
         COUNT(*) as job_count,
-        ROUND(AVG((salary_min + salary_max) / 2), 2) as avg_salary
+        ROUND(AVG(salary_estimate), 2) as avg_salary
 
-        FROM `{client.project}.{DATASET_ID}.{JOBS_TABLE}`
-        WHERE salary_min IS NOT NULL AND salary_max IS NOT NULL AND salary_min > 0
+        FROM estimates
+        WHERE salary_estimate >= 100000
         GROUP BY company
         HAVING job_count >= {min_count}
         ORDER BY avg_salary DESC
@@ -126,13 +152,23 @@ def highest_paying_companies(limit=10, min_count=3):
 
 def highest_paying_cities(limit=10, min_count=3):
     query = f"""
-        SELECT 
+        WITH estimates AS (
+            SELECT
+                city,
+                CASE
+                    WHEN salary_min IS NOT NULL AND salary_min >= 100000 THEN (salary_min + salary_max) / 2
+                    ELSE salary_max
+                END AS salary_estimate
+            FROM `{client.project}.{DATASET_ID}.{JOBS_TABLE}`
+            WHERE salary_max IS NOT NULL AND city IS NOT NULL
+        )
+        SELECT
         city,
         COUNT(*) as job_count,
-        ROUND(AVG((salary_min + salary_max) / 2), 2) as avg_salary
+        ROUND(AVG(salary_estimate), 2) as avg_salary
 
-        FROM `{client.project}.{DATASET_ID}.{JOBS_TABLE}`
-        WHERE salary_min IS NOT NULL AND salary_max IS NOT NULL AND salary_min > 0 AND city IS NOT NULL
+        FROM estimates
+        WHERE salary_estimate >= 100000
         GROUP BY city
         HAVING job_count >= {min_count}
         ORDER BY avg_salary DESC
@@ -143,30 +179,54 @@ def highest_paying_cities(limit=10, min_count=3):
 
 def salary_distribution():
     query = f"""
-        SELECT 
+        WITH estimates AS (
+            SELECT
+                CASE
+                    WHEN salary_min IS NOT NULL AND salary_min >= 100000 THEN (salary_min + salary_max) / 2
+                    ELSE salary_max
+                END AS salary_estimate
+            FROM `{client.project}.{DATASET_ID}.{JOBS_TABLE}`
+            WHERE salary_max IS NOT NULL
+        )
+        SELECT
         COUNT(*) as total_jobs_with_salary,
-        ROUND(MIN(salary_min), 2) as min_salary,
-        ROUND(MAX(salary_max), 2) as max_salary,
-        ROUND(AVG((salary_min + salary_max) / 2), 2) as avg_salary,
-        ROUND(APPROX_QUANTILES((salary_min + salary_max) / 2, 4)[OFFSET(1)], 2) as p25,
-        ROUND(APPROX_QUANTILES((salary_min + salary_max) / 2, 4)[OFFSET(2)], 2) as median,
-        ROUND(APPROX_QUANTILES((salary_min + salary_max) / 2, 4)[OFFSET(3)], 2) as p75
+        ROUND(MIN(salary_estimate), 2) as min_salary,
+        ROUND(MAX(salary_estimate), 2) as max_salary,
+        ROUND(AVG(salary_estimate), 2) as avg_salary,
+        ROUND(APPROX_QUANTILES(salary_estimate, 4)[OFFSET(1)], 2) as p25,
+        ROUND(APPROX_QUANTILES(salary_estimate, 4)[OFFSET(2)], 2) as median,
+        ROUND(APPROX_QUANTILES(salary_estimate, 4)[OFFSET(3)], 2) as p75
 
-        FROM `{client.project}.{DATASET_ID}.{JOBS_TABLE}`
-        WHERE salary_min IS NOT NULL AND salary_max IS NOT NULL AND salary_min > 0
+        FROM estimates
+        WHERE salary_estimate >= 100000
     """
     return client.query(query).to_dataframe(create_bqstorage_client=False)
 
 
 def roles_missing_salary(limit=10):
     query = f"""
-        SELECT 
-        INITCAP(TRIM(title)) as title,
+        WITH normalized_jobs AS (
+            SELECT
+                INITCAP(TRIM(REGEXP_REPLACE(
+                    REGEXP_REPLACE(
+                        REGEXP_REPLACE(title, r'(?i)^\\s*(Sr|Senior)[\\.\\-\\s]+', 'Senior '),
+                        r'(?i)^\\s*(Jr|Junior)[\\.\\-\\s]+', 'Junior '
+                    ),
+                    r'\\s+', ' '
+                ))) AS title,
+                CASE
+                    WHEN salary_min IS NOT NULL AND salary_min >= 100000 THEN (salary_min + salary_max) / 2
+                    ELSE salary_max
+                END AS salary_estimate
+            FROM `{client.project}.{DATASET_ID}.{JOBS_TABLE}`
+            WHERE title IS NOT NULL
+        )
+        SELECT
+        title,
         COUNT(*) as job_count
 
-        FROM `{client.project}.{DATASET_ID}.{JOBS_TABLE}`
-        WHERE (salary_min IS NULL OR salary_max IS NULL OR salary_min = 0)
-        AND title IS NOT NULL
+        FROM normalized_jobs
+        WHERE salary_estimate IS NULL OR salary_estimate < 100000
         GROUP BY title
         ORDER BY job_count DESC
         LIMIT {limit}
