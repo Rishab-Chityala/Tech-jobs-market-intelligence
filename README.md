@@ -2,7 +2,7 @@
 
 An automated, end-to-end data platform that tracks, enriches, and analyzes the Indian tech job market. Jobs are pulled daily from the Adzuna API, loaded into BigQuery, enriched with skill and work-mode detection, and surfaced through both a CLI reporting layer and a 5-page Looker Studio dashboard — all running on a fully automated daily pipeline via GitHub Actions.
 
-**Live dashboard:** [Looker Studio link here]
+**Live dashboard:** https://datastudio.google.com/s/rEkF-_XwD6A
 
 ---
 
