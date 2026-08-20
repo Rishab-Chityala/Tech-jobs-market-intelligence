@@ -1,5 +1,5 @@
 from src.warehouse.client import get_bigquery_client
-from src.config.warehouse import DATASET_ID,JOBS_TABLE
+from src.config.warehouse import DATASET_ID, JOBS_TABLE
 
 client = get_bigquery_client()
 
@@ -30,7 +30,6 @@ def top_hiring_cities(limit=10):
     """
     return client.query(query).to_dataframe(create_bqstorage_client=False)
 
-
 def top_hiring_states(limit=10):
     query = f"""
         SELECT 
@@ -44,22 +43,6 @@ def top_hiring_states(limit=10):
         LIMIT {limit}
     """
     return client.query(query).to_dataframe(create_bqstorage_client=False)
-
-
-def most_common_job_titles(limit=10):
-    query = f"""
-        SELECT 
-        title,
-        COUNT(*) as job_count
-
-        FROM `{client.project}.{DATASET_ID}.{JOBS_TABLE}`
-        WHERE title IS NOT NULL
-        GROUP BY title
-        ORDER BY job_count DESC
-        LIMIT {limit}
-    """
-    return client.query(query).to_dataframe(create_bqstorage_client=False)
-
 
 def jobs_by_category(limit=20):
     query = f"""
@@ -83,15 +66,14 @@ def most_common_job_titles(limit=10):
 
         FROM `{client.project}.{DATASET_ID}.{JOBS_TABLE}`
         WHERE title IS NOT NULL
-        GROUP BY title
+        GROUP BY 1
         ORDER BY job_count DESC
         LIMIT {limit}
     """
     return client.query(query).to_dataframe(create_bqstorage_client=False)
 
-
 def avg_salary_by_role(limit=10, min_count=3):
-     query = f"""
+    query = f"""
         WITH normalized_jobs AS (
             SELECT
                 INITCAP(TRIM(REGEXP_REPLACE(
@@ -122,7 +104,6 @@ def avg_salary_by_role(limit=10, min_count=3):
     """
     return client.query(query).to_dataframe(create_bqstorage_client=False)
 
-
 def highest_paying_companies(limit=10, min_count=3):
     query = f"""
         WITH estimates AS (
@@ -148,7 +129,6 @@ def highest_paying_companies(limit=10, min_count=3):
         LIMIT {limit}
     """
     return client.query(query).to_dataframe(create_bqstorage_client=False)
-
 
 def highest_paying_cities(limit=10, min_count=3):
     query = f"""
@@ -176,7 +156,6 @@ def highest_paying_cities(limit=10, min_count=3):
     """
     return client.query(query).to_dataframe(create_bqstorage_client=False)
 
-
 def salary_distribution():
     query = f"""
         WITH estimates AS (
@@ -201,7 +180,6 @@ def salary_distribution():
         WHERE salary_estimate >= 100000
     """
     return client.query(query).to_dataframe(create_bqstorage_client=False)
-
 
 def roles_missing_salary(limit=10):
     query = f"""
@@ -256,7 +234,6 @@ def jobs_posted_today():
     """
     return client.query(query).to_dataframe(create_bqstorage_client=False)
 
-
 def jobs_posted_this_week():
     query = f"""
         SELECT 
@@ -266,7 +243,6 @@ def jobs_posted_this_week():
         WHERE DATE(posted_date, "Asia/Kolkata") >= DATE_SUB(CURRENT_DATE("Asia/Kolkata"), INTERVAL 7 DAY)
     """
     return client.query(query).to_dataframe(create_bqstorage_client=False)
-
 
 def hiring_trend_over_time(days=30):
     query = f"""
@@ -296,7 +272,6 @@ def top_skills(limit=15):
     """
     return client.query(query).to_dataframe(create_bqstorage_client=False)
 
-
 def top_skills_for_role(title_keyword, limit=10):
     query = f"""
         SELECT 
@@ -313,7 +288,6 @@ def top_skills_for_role(title_keyword, limit=10):
     """
     return client.query(query).to_dataframe(create_bqstorage_client=False)
 
-
 def avg_skills_per_job():
     query = f"""
         SELECT 
@@ -327,7 +301,6 @@ def avg_skills_per_job():
         )
     """
     return client.query(query).to_dataframe(create_bqstorage_client=False)
-
 
 def jobs_with_no_skills_detected():
     query = f"""
