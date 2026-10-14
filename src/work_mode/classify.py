@@ -58,8 +58,8 @@ def run_work_mode_classification():
     job_config = bigquery.LoadJobConfig(
         write_disposition="WRITE_APPEND",
         schema=[
-            bigquery.SchemaField("job_id", "STRING"),
-            bigquery.SchemaField("work_mode", "STRING"),
+            bigquery.SchemaField("job_id", "STRING", mode="REQUIRED"),
+            bigquery.SchemaField("work_mode", "STRING", mode="REQUIRED"),
         ],
     )
     load_job = client.load_table_from_dataframe(result_df, table_id, job_config=job_config)
